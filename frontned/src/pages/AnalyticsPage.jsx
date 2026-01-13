@@ -277,7 +277,7 @@ const AnalyticsPage = () => {
                 </div>
 
                 {/* Port Distribution */}
-                <div className="chart-card">
+                <div className="chart-card chart-card-green">
                     <h3 className="chart-title">Port-wise Distribution</h3>
                     <div className="chart-container">
                         <Doughnut data={portDistributionData} options={doughnutOptions} />
@@ -301,7 +301,7 @@ const AnalyticsPage = () => {
                 </div>
 
                 {/* Clearance Time */}
-                <div className="chart-card large">
+                <div className="chart-card chart-card-orange large">
                     <h3 className="chart-title">Average Clearance Time Trend</h3>
                     <div className="chart-container">
                         <Line data={clearanceTimeData} options={chartOptions} />
