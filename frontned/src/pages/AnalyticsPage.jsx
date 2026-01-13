@@ -269,7 +269,7 @@ const AnalyticsPage = () => {
             {/* Charts Grid */}
             <div className="charts-grid">
                 {/* BOE Volume Trend */}
-                <div className="chart-card large">
+                <div className="chart-card chart-card-blue large">
                     <h3 className="chart-title">BOE Volume Trend</h3>
                     <div className="chart-container">
                         <Line data={volumeTrendData} options={chartOptions} />
@@ -285,7 +285,7 @@ const AnalyticsPage = () => {
                 </div>
 
                 {/* Duty Collection */}
-                <div className="chart-card large">
+                <div className="chart-card chart-card-teal large">
                     <h3 className="chart-title">Duty Collection Trend</h3>
                     <div className="chart-container">
                         <Bar data={dutyTrendData} options={chartOptions} />
@@ -293,7 +293,7 @@ const AnalyticsPage = () => {
                 </div>
 
                 {/* Status Distribution */}
-                <div className="chart-card">
+                <div className="chart-card chart-card-purple">
                     <h3 className="chart-title">Status Distribution</h3>
                     <div className="chart-container">
                         <Doughnut data={statusDistributionData} options={doughnutOptions} />
@@ -309,7 +309,7 @@ const AnalyticsPage = () => {
                 </div>
 
                 {/* Origin Countries */}
-                <div className="chart-card">
+                <div className="chart-card chart-card-indigo">
                     <h3 className="chart-title">Value by Origin Country</h3>
                     <div className="chart-container">
                         <Bar data={originCountryData} options={chartOptions} />
