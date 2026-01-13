@@ -1,0 +1,161 @@
+.brain-mapping-card {
+    background: var(--color-surface-dark);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.brain-mapping-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.brain-mapping-card .card-title {
+    color: var(--color-text-inverse);
+    margin-bottom: var(--spacing-lg);
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.01em;
+}
+
+/* Thumbnails Card - Vertical Layout */
+.brain-thumbnails-card {
+    animation-delay: 0.1s;
+}
+
+.brain-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 1;
+    background: var(--color-surface-elevated);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: scaleIn 0.4s ease-out forwards;
+}
+
+.thumbnail:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.thumbnail:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.thumbnail:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes scaleIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.thumbnail:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.thumbnail.active {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.thumbnail canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Main Brain Card */
+.brain-main-card {
+    animation-delay: 0.2s;
+}
+
+.brain-content {
+    display: grid;
+    grid-template-columns: 1fr 60px;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.brain-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.brain-main canvas {
+    max-width: 100%;
+    height: auto;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.intensity-scale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.scale-value {
+    font-size: 13px;
+    color: var(--color-text-inverse);
+    font-weight: var(--font-weight-medium);
+    opacity: 0;
+    animation: fadeIn 0.4s ease-out 0.8s forwards;
+}
+
+.scale-gradient {
+    width: 4px;
+    flex: 1;
+    margin: var(--spacing-sm) 0;
+    background: linear-gradient(180deg,
+        rgba(239, 68, 68, 0.8) 0%,
+        rgba(245, 158, 11, 0.8) 50%,
+        rgba(234, 179, 8, 0.8) 100%
+    );
+    border-radius: var(--radius-full);
+    opacity: 0;
+    animation: fadeIn 0.4s ease-out 0.9s forwards;
+}
+
+@media (max-width: 1024px) {
+    .brain-content {
+        grid-template-columns: 1fr;
+    }
+
+    .brain-thumbnails {
+        flex-direction: row;
+        justify-content: center;
+    }
+}

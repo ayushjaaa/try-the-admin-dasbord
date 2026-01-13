@@ -1,0 +1,196 @@
+/* Skeleton Base Styles */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--color-neutral-200) 0%,
+        var(--color-neutral-100) 50%,
+        var(--color-neutral-200) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+    border-radius: var(--radius-md);
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Skeleton Container */
+.skeleton-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* Skeleton Card */
+.skeleton-card {
+    background: var(--color-surface);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    animation: fadeIn 0.3s ease-in;
+}
+
+.skeleton-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.skeleton-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+}
+
+.skeleton-text-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* Skeleton Text Sizes */
+.skeleton-text {
+    height: 16px;
+    width: 100%;
+    border-radius: var(--radius-sm);
+}
+
+.skeleton-text-xs {
+    height: 12px;
+    width: 60%;
+}
+
+.skeleton-text-sm {
+    height: 14px;
+    width: 40%;
+}
+
+.skeleton-text-lg {
+    height: 24px;
+    width: 70%;
+}
+
+.skeleton-text-xl {
+    height: 32px;
+    width: 50%;
+}
+
+/* Skeleton Table */
+.skeleton-table-row td {
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.skeleton-table-row .skeleton-text {
+    height: 14px;
+    width: 90%;
+}
+
+/* Skeleton Chart */
+.skeleton-chart {
+    background: var(--color-surface);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    min-height: 300px;
+}
+
+.skeleton-chart-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: var(--spacing-md);
+    height: 250px;
+}
+
+.skeleton-bar {
+    flex: 1;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    animation: pulseHeight 1.5s ease-in-out infinite;
+}
+
+.skeleton-bar:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.skeleton-bar:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.skeleton-bar:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.skeleton-bar:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.skeleton-bar:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulseHeight {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.skeleton-chart-area {
+    height: 300px;
+    border-radius: var(--radius-lg);
+}
+
+/* Skeleton Page */
+.skeleton-page {
+    padding: var(--spacing-xl);
+}
+
+.skeleton-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.skeleton-section {
+    background: var(--color-surface);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skeleton-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skeleton-chart-bars {
+        height: 200px;
+    }
+}

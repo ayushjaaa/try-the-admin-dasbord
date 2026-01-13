@@ -1,0 +1,139 @@
+.ai-insights-card {
+    padding: var(--spacing-xl);
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    transition: all var(--transition-base);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ai-insights-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px) !important;
+}
+
+.insights-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+}
+
+.date-filter {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: #f9fafb;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+.insight-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.insight-card {
+    padding: var(--spacing-lg);
+    background: #f9fafb;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+}
+
+.insight-card:hover {
+    background: #f3f4f6;
+}
+
+.insight-title {
+    font-size: 14px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.insight-desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+}
+
+.insight-value {
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.progress-bar {
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    width: 0;
+    animation: expandProgressBar 1.5s ease-out 0.8s forwards;
+}
+
+@keyframes expandProgressBar {
+    to {
+        width: var(--progress-width);
+    }
+}
+
+.progress-fill-1 {
+    background: linear-gradient(90deg, #ef4444 0%, #f97316 100%);
+    --progress-width: 12%;
+}
+
+.progress-fill-2 {
+    background: linear-gradient(90deg, #ef4444 0%, #f97316 100%);
+    --progress-width: 30%;
+}
+
+.gauge-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.gauge-svg {
+    width: 100%;
+    height: auto;
+}
+
+.gauge-value {
+    position: absolute;
+    bottom: 30px;
+    font-size: 48px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+}
